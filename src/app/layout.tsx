@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Nunito } from "next/font/google";
+import Chakra from "@/components/chakra";
+import { cookies } from "next/headers";
+import Layout from "@/components/layouts/main";
+import AnimateScroll from "@/components/AnimateScroll";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Portfolio",
+  title: "Bui Son Thai - Homepage",
+  description: "buisonthai's homepage",
 };
 
 export default function RootLayout({
@@ -14,9 +17,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookiesList = cookies();
+  const colorMode = cookiesList.get("chakra-ui-color-mode");
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Chakra colorMode={colorMode?.value}>
+        <body className={nunito.className}>
+          <Layout>
+            <AnimateScroll>{children}</AnimateScroll>
+          </Layout>
+        </body>
+      </Chakra>
     </html>
   );
 }
