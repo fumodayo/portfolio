@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "hello": "Xin chào, mình là một lập trình viên đến từ Việt Nam!",
+    "my name": "Bùi Sơn Thái",
+    "heading 1": "Giới thiệu",
+    "Hello": "Xin chào, mình là",
+    "I am a software developer": "Mình là một lập trình viên phần mềm sống ở Đà Nẵng với niềm đam mê mãnh liệt trong việc tạo ra các giải pháp có ảnh hưởng. Bản thân mình chuyên về ReactJS, NodeJS, và MongoDB. Mình có bằng Cử nhân Kỹ thuật Phần mềm từ Đại học Duy Tân và các chứng chỉ về CSS, JavaScript, và giải quyết vấn đề. Khi không làm việc, tớ thích đọc sách, xem phim và khám phá những điều mới",
+    "My portfolio": "Tìm hiểu thêm về tớ",
+    "heading 2": "Tiểu sử",
+    "born": "Sinh ra ở Đà Nẵng, Việt Nam",
+    "completed": "Tốt nghiệp Đại Học Duy Tân chuyên ngành Công nghệ thông tin (CMU)",
+    "2023": "2023 đến hiện tại",
+    "working": "Freelancer",
+    "heading 3": "Chứng chỉ",
+    "Jun": "Tháng 6",
+    "On the web": "Liên hệ"
+  },
+  "Works": {
+    "heading 1": "Sản phẩm",
+    "cs2 boost": "Trang web về dịch vụ cày xếp hạng rank và cải thiện kỹ năng chơi game Counter Strike 2",
+    "danabus": "Trang web để theo dõi các tuyến đường, xem thông tin về các điểm dừng xe buýt và lập lộ trình đi xe buýt của riêng bạn trong nội thành Đà Nẵng",
+    "imarket": "Ứng dụng sẽ tìm kiếm và đặt nguyên liệu nấu ăn, với việc tối ưu hóa giao hàng từ nhiều nhà cung cấp, cùng với cập nhật kho hàng theo thời gian thực từ Shopee Food sẽ giúp cho đơn hàng đến được khách hàng nhanh hơn"
+  },
+  "Navbar": {
+    "works": "Sản phẩm",
+    "source": "Nguồn",
+    "about": "Trang chủ"
+  },
+  "CS2Boost": {
+    "description": "Website giúp người dùng tăng rank và hỗ trợ, cải thiện kỹ năng chơi Counter Strike 2 trở nên dễ dàng. Có nhiều gói dịch vụ boost rank ở nhiều chế độ, cài đặt dễ dàng, theo dõi đơn hàng và quản lý thông tin cá nhân một cách tiện lợi. Phương thức thanh toán an toàn qua Stripe, cảnh báo đăng nhập lạ và xác thực người dùng bằng CCCD",
+    "list 1": "Có chế độ Dark/ Light Mode, chuyển đổi đơn vị tiền tệ (USD/VND) và thay đổi ngôn ngữ (EN/VN)",
+    "list 2": "Dễ dàng theo dõi gói boost và chat với booster theo thời gian thực",
+    "list 3": "Đăng ký/đăng nhập với Google, thanh toán qua Stripe và quản lý thông tin cá nhân",
+    "list 4": "Dễ dàng quản lý đơn đặt cày thuê và theo dõi doanh thu",
+    "list 5": "Nhận cảnh báo cho các đăng nhập từ IP lạ và xác thực thông tin người dùng bằng CCCD"
+  },
+  "Danabus": {
+    "description": "Với Website này bạn có thể dễ dàng theo dõi các điểm dừng xe buýt và tuyến xe buýt ở thành phố Đà Nẵng. DanaBus có giao diện tiện lợi để bạn nhanh chóng tìm các điểm dừng xe buýt gần vị trí của bạn và lên kế hoạch cho tuyến đường từ điểm xuất phát đến đích của bạn một cách chính xác và hiệu quả nhất. Khám phá và tận hưởng sự tiện lợi của hệ thống giao thông công cộng ngay hôm nay!",
+    "list 1": "Tra cứu thông tin về các điểm dừng xe buýt gần bạn và các tuyến xe buýt ở Đà Nẵng",
+    "list 2": "Dễ dàng xác định các điểm dừng xe buýt gần vị trí hiện tại của bạn",
+    "list 3": "Lên tuyến đường nhanh chóng và chính xác từ vị trí của bạn đến điểm đích mà sử dụng hệ thống xe buýt"
+  },
+  "IMarket": {
+    "description": "Ứng dụng cung cấp giải pháp tiện lợi cho việc nấu ăn tại gia. Bạn có thể dễ dàng tìm kiếm và đặt nguyên liệu, nhận gợi ý dựa trên sở thích cá nhân của bạn, và xem nguồn gốc của các nguyên liệu từ nhiều cửa hàng khác nhau. Các nhân viên giao hàng sẽ tối ưu hóa tuyến đường giao hàng từ nhiều nhà cung cấp và hệ thống sẽ tự động cập nhật kho hàng theo thời gian thực từ Shopee Food, giúp bạn tiết kiệm thời gian và công sức trong việc chuẩn bị bữa ăn",
+    "list 1": "Tìm kiếm và đặt nguyên liệu giao hàng tận nhà",
+    "list 2": "Nhận gợi ý về nguyên liệu dựa trên sở thích cá nhân (ngon, mặn, chua, v.v.)",
+    "list 3": "Xem nguồn gốc của nguyên liệu từ các cửa hàng khác nhau",
+    "list 4": "Tối ưu hóa tuyến đường giao hàng từ nhiều nhà cung cấp",
+    "list 5": "Nhận cập nhật kho hàng theo thời gian thực từ Shopee Food"
+  }
+}

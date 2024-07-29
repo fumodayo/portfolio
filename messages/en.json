@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "hello": "Hello, I'm an developer based in Vietnam!",
+    "my name": "Bui Son Thai",
+    "heading 1": "Work",
+    "Hello": "Hello, my name is",
+    "I am a software developer": "I am a software developer based in Danang with a strong passion for creating impactful solutions. I specialize in ReactJS, NodeJS, MongoDB. I hold a degree in Software Engineering from Duy Tan University and certifications in CSS, JavaScript, and problem-solving. When not online, I enjoy reading books, watching movies, and discovering new things",
+    "My portfolio": "My portfolio",
+    "heading 2": "bio",
+    "born": "Born in Danang, Vietnam",
+    "completed": "Completed Development Program at the International Duy Tan University",
+    "2023": "2023 to present",
+    "working": "Working as a freelancer",
+    "heading 3": "Certificate",
+    "Jun": "Jun",
+    "On the web": "On the web"
+  },
+  "Works": {
+    "heading 1": "Works",
+    "cs2 boost": "A website offering services for rank boosting and skill improvement in Counter-Strike 2",
+    "danabus": "A website for tracking bus routes, viewing information about bus stops, and planning your own bus journey within Da Nang city",
+    "imarket": "An app that searches for and orders cooking ingredients, optimizing deliveries from multiple suppliers. Real-time stock updates from Shopee Food ensure faster delivery to customers"
+  },
+  "Navbar": {
+    "works": "Works",
+    "source": "View Source",
+    "about": "About"
+  },
+  "CS2Boost": {
+    "description": "A website that makes ordering CS2 ranking and boosting services easy. Switch modes, adjust settings, track orders, and manage personal information effortlessly. Enjoy secure payments via Stripe, IP login alerts, and QR code verification for a seamless experience.",
+    "list 1": "Toggle dark/light modes, adjust currency (USD/VND), and change language (EN/VN)",
+    "list 2": "Browse, order, and track ranking or boosting services with real-time updates",
+    "list 3": "Register/log in with Google, pay via Stripe, and manage personal details",
+    "list 4": "Get new order notifications, manage and confirm orders, and track revenue and statistics",
+    "list 5": "Receive alerts for unfamiliar IP logins and verify information with a QR code"
+  },
+  "Danabus": {
+    "description": "Welcome! Here, you can easily track bus stops and routes in Da Nang city. We provide convenient tools for you to quickly find bus stops near your location and plan your route from your starting point to your desired destination accurately and efficiently. Explore and enjoy the convenience of the public transportation system today!",
+    "list 1": "Look up information on bus stops near you and the routes of buses in Da Nang",
+    "list 2": "Easily locate bus stops near your current location",
+    "list 3": "Quickly and accurately plan your route from your location to your destination using the bus system"
+  },
+  "IMarket": {
+    "description": "A mobile app offering a convenient solution for cooking. You can easily find and order ingredients, receive suggestions based on your taste preferences, and see the sources of the ingredients from various stores. Couriers will optimize delivery routes from multiple suppliers and provide real-time stock updates from Shopee Food, saving you time and effort in meal preparation.",
+    "list 1": "Search for and order ingredients with home delivery",
+    "list 2": "Get ingredient suggestions based on personal taste preferences (spicy, salty, sour, etc.)",
+    "list 3": "View ingredient sources from various stores",
+    "list 4": "Optimize delivery routes from multiple suppliers",
+    "list 5": "Receive real-time stock updates from Shopee Food"
+  }
+}

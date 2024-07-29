@@ -20,6 +20,8 @@ import Logo from "./logo";
 import { IoLogoGithub } from "react-icons/io5";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
+import LanguageSwitch from "./language-switch";
+import { useLocale, useTranslations } from "next-intl";
 
 const LinkItem = ({ href, path, target, children, ...props }: any) => {
   const active = path === href;
@@ -42,6 +44,8 @@ const LinkItem = ({ href, path, target, children, ...props }: any) => {
 
 const Navbar = ({ props }: { props?: any }) => {
   const path = usePathname();
+  const t = useTranslations("Navbar");
+  const locale = useLocale();
 
   return (
     <Box
@@ -75,8 +79,8 @@ const Navbar = ({ props }: { props?: any }) => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}>
-            Works
+          <LinkItem href={`/${locale}/works`} path={path}>
+            {t("works")}
           </LinkItem>
           <LinkItem
             target="_blank"
@@ -88,12 +92,15 @@ const Navbar = ({ props }: { props?: any }) => {
             pl={2}
           >
             <IoLogoGithub />
-            Source
+            {t("source")}
           </LinkItem>
         </Stack>
 
         <Box textAlign="right">
-          <ThemeToggleButton />
+          <Flex gap={2}>
+            <ThemeToggleButton />
+            <LanguageSwitch />
+          </Flex>
 
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu isLazy id="navbar-menu">
@@ -105,16 +112,16 @@ const Navbar = ({ props }: { props?: any }) => {
               />
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                  <MenuItem as={Link}>{t("about")}</MenuItem>
                 </NextLink>
                 <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
+                  <MenuItem as={Link}>{t("works")}</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}
                   href="https://github.com/thairyo/thairyo.github.io"
                 >
-                  View Source
+                  {t("source")}
                 </MenuItem>
               </MenuList>
             </Menu>

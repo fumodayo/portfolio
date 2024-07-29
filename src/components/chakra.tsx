@@ -2,7 +2,7 @@
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
-import { setCookie } from "cookies-next";
+import { getCookie, setCookie } from "cookies-next";
 import theme from "@/lib/theme";
 
 type ChakraProps = {
@@ -18,7 +18,7 @@ export default function Chakra({ colorMode, children }: ChakraProps) {
         colorModeManager={{
           type: "cookie",
           ssr: true,
-          get: (init) => colorMode ?? init,
+          get: () => colorMode ?? getCookie("chakra-ui-color-mode"),
           set: (value) => {
             setCookie("chakra-ui-color-mode", value);
           },
