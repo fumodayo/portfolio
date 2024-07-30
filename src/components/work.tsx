@@ -54,8 +54,8 @@ export const WorkImageZoom = ({
         onClick={onOpen}
         borderRadius="lg"
         mb={4}
+        w="full"
         cursor="pointer"
-        placeholder="blur"
         {...props}
       />
       <Modal isOpen={isOpen} onClose={onClose} size="full">

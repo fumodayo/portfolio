@@ -1,6 +1,12 @@
 import Layout from "@/components/layouts/article";
 import P from "@/components/paragraph";
-import { Meta, Title, WorkImage, WorkImageZoom } from "@/components/work";
+import {
+  Meta,
+  Title,
+  WorkImage,
+  WorkImageZoom,
+  WorkVideo,
+} from "@/components/work";
 import {
   Badge,
   Container,
@@ -20,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 const DanaBusPage = () => {
-  const t = useTranslations('Danabus');
+  const t = useTranslations("Danabus");
 
   return (
     <Layout>
@@ -77,7 +83,10 @@ const DanaBusPage = () => {
           alt="danabus-banner"
         />
         <WorkImageZoom src="/images/works/danabus-1.png" alt="danabus-1" />
-        <WorkImageZoom src="/images/works/danabus-2.gif" alt="danabus-2" />
+        <WorkVideo
+          src="https://www.youtube.com/embed/x8ML8s8jX8A"
+          title="danabus-2"
+        />
       </Container>
     </Layout>
   );

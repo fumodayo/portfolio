@@ -32,15 +32,15 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <Chakra colorMode={colorMode?.value}>
-        <NextIntlClientProvider messages={messages}>
+      <NextIntlClientProvider messages={messages}>
+        <Chakra colorMode={colorMode?.value}>
           <body className={nunito.className}>
             <Layout>
               <AnimateScroll>{children}</AnimateScroll>
             </Layout>
           </body>
-        </NextIntlClientProvider>
-      </Chakra>
+        </Chakra>
+      </NextIntlClientProvider>
     </html>
   );
 }

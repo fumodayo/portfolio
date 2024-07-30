@@ -1,6 +1,12 @@
 import Layout from "@/components/layouts/article";
 import P from "@/components/paragraph";
-import { Meta, Title, WorkImage, WorkImageZoom } from "@/components/work";
+import {
+  Meta,
+  Title,
+  WorkImage,
+  WorkImageZoom,
+  WorkVideo,
+} from "@/components/work";
 import {
   Badge,
   Container,
@@ -77,9 +83,18 @@ const CS2BoostPage = () => {
           alt="cs2-boost-banner"
         />
         <WorkImageZoom src="/images/works/cs2-boost-1.png" alt="cs2-boost-1" />
-        <WorkImageZoom src="/images/works/cs2-boost-2.gif" alt="cs2-boost-2" />
-        <WorkImageZoom src="/images/works/cs2-boost-3.gif" alt="cs2-boost-3" />
-        <WorkImageZoom src="/images/works/cs2-boost-4.gif" alt="cs2-boost-4" />
+        <WorkVideo
+          src="https://www.youtube.com/embed/7rxgAWLMsdg"
+          title="cs2-boost-2"
+        />
+        <WorkVideo
+          src="https://www.youtube.com/embed/q4J_C2p43lQ"
+          title="cs2-boost-3"
+        />
+        <WorkVideo
+          src="https://www.youtube.com/embed/NY540_EkxgA"
+          title="cs2-boost-4"
+        />
       </Container>
     </Layout>
   );

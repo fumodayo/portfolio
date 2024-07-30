@@ -3,7 +3,8 @@ import { mode, type Styles } from "@chakra-ui/theme-tools";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 
 const styles: Styles = {
-  // global: (props) => ({
+  // Fix sau
+  // global: (props: StyleFunctionProps) => ({
   //   body: {
   //     bg: mode("#f0e7db", "#202023")(props),
   //   },

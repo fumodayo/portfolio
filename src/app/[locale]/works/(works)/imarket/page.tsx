@@ -1,6 +1,6 @@
 import Layout from "@/components/layouts/article";
 import P from "@/components/paragraph";
-import { Meta, Title, WorkImage, WorkImageZoom } from "@/components/work";
+import { Meta, Title, WorkImage, WorkVideo } from "@/components/work";
 import {
   Badge,
   Container,
@@ -64,18 +64,15 @@ const IMarketPage = () => {
           </ListItem>
         </List>
         <WorkImage src="/images/works/imarket-banner.png" alt="banner" />
-        <Flex justifyContent="space-between">
-          <WorkImageZoom
-            maxW={260}
-            src="/images/works/imarket-1.gif"
-            alt="user"
-          />
-          <WorkImageZoom
-            maxW={260}
-            src="/images/works/imarket-2.gif"
-            alt="rider"
-          />
-        </Flex>
+
+        <WorkVideo
+          title="imarket-1"
+          src="https://www.youtube.com/embed/t7vFuj9K-BY"
+        />
+        <WorkVideo
+          title="imarket-2"
+          src="https://www.youtube.com/embed/TZ8f8ywcifc"
+        />
       </Container>
     </Layout>
   );

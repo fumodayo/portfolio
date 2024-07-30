@@ -58,7 +58,8 @@ export const WorkGridItem = ({
             src={thumbnail}
             alt={title}
             className="grid-item-thumbnail"
-            placeholder="blur"
+            width={600}
+            height={400}
             style={{ objectFit: "cover" }}
           />
           <LinkOverlay href={`/${locale}/works/${id}`}>

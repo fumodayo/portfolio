@@ -3,10 +3,7 @@ import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
 import Section from "@/components/section";
 import { WorkGridItem } from "@/components/grid-item";
 
-import thumbCS2Boost from "../../../../public/images/works/cs2-boost-banner.png";
 import type { Metadata } from "next";
-import thumbDanabus from "../../../../public/images/works/danabus-banner.png";
-import thumbIMarket from "../../../../public/images/works/imarket-banner.png";
 import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
@@ -28,7 +25,7 @@ const WorksPage = () => {
             <WorkGridItem
               id="cs2-boost"
               title="Counter Strike 2 Boost"
-              thumbnail={thumbCS2Boost}
+              thumbnail="/images/works/cs2-boost-banner.png"
             >
               {t("cs2 boost")}
             </WorkGridItem>
@@ -38,7 +35,7 @@ const WorksPage = () => {
             <WorkGridItem
               id="danabus"
               title="Danang Bus Tracking"
-              thumbnail={thumbDanabus}
+              thumbnail="/images/works/danabus-banner.png"
             >
               {t("danabus")}
             </WorkGridItem>
@@ -46,7 +43,11 @@ const WorksPage = () => {
         </SimpleGrid>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
-            <WorkGridItem id="imarket" title="IMarket" thumbnail={thumbIMarket}>
+            <WorkGridItem
+              id="imarket"
+              title="IMarket"
+              thumbnail="/images/works/imarket-banner.png"
+            >
               {t("imarket")}
             </WorkGridItem>
           </Section>
