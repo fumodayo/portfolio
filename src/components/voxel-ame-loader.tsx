@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Spinner } from "@chakra-ui/react";
-import { forwardRef } from "react";
+import { ForwardedRef, forwardRef } from "react";
 
 export const AmeSpinner = () => (
   <Spinner
@@ -15,7 +15,10 @@ export const AmeSpinner = () => (
 );
 
 export const AmeContainer = forwardRef(
-  ({ children }: { children: React.ReactNode }, ref) => (
+  (
+    { children }: { children: React.ReactNode },
+    ref: ForwardedRef<HTMLDivElement>
+  ) => (
     <Box
       ref={ref}
       className="voxel-ame"

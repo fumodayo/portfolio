@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -37,7 +39,7 @@ const VoxelAme = () => {
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
-      renderer.outputEncoding = THREE.sRGBEncoding;
+      // (renderer as any).outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
@@ -49,8 +51,6 @@ const VoxelAme = () => {
         20 * Math.cos(0.2 * Math.PI)
       );
 
-      // 640 -> 240
-      // 8   -> 6
       const scale = scH * 0.0005 + 3;
       const camera = new THREE.OrthographicCamera(
         -scale,
