@@ -1,9 +1,11 @@
+import Chakra from "@/components/chakra";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html>
-      {children}
+      <Chakra>{children}</Chakra>
     </html>
-  )
+  );
 }

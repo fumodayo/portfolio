@@ -19,9 +19,10 @@ import NextLink from "next/link";
 
 export const Title = ({ children }: { children: React.ReactNode }) => {
   const t = useTranslations("Navbar");
+
   return (
     <Box>
-      <NextLink href="/works" passHref>
+      <NextLink href="/works">
         <Link>{t("works")}</Link>
       </NextLink>
       <span>

@@ -2,11 +2,10 @@
 
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
-import { usePathname, useRouter } from "@/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ButtonGroup, IconButton, Tooltip } from "@chakra-ui/react";
-import { FaStar } from "react-icons/fa6";
-import { FaPlus } from "react-icons/fa";
+import { FaEarthAmericas, FaStar } from "react-icons/fa6";
+import { usePathname, useRouter } from "@/navigation";
 
 const LanguageSwitch = () => {
   const locale = useLocale();
@@ -41,9 +40,9 @@ const LanguageSwitch = () => {
               aria-label={
                 locale === "en" ? "Switch to Vietnamese" : "Switch to English"
               }
-              bg={locale === "en" ? "blue.600" : "red.600"}
+              bg={locale === "en" ? "blue.400" : "red.400"}
               colorScheme={locale === "en" ? "blue" : "red"}
-              icon={locale === "en" ? <FaPlus /> : <FaStar />}
+              icon={locale === "en" ? <FaEarthAmericas size={18}/> : <FaStar size={18} />}
               onClick={() => changeLanguage(locale === "en" ? "vi" : "en")}
             />
           </Tooltip>

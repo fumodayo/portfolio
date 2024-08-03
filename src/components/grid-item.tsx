@@ -50,9 +50,10 @@ export const WorkGridItem = ({
   thumbnail,
 }: WorkGridItemProps) => {
   const locale = useLocale();
+
   return (
     <Box w="100%" textAlign="center">
-      <NextLink href={`/${locale}/works/${id}`} passHref scroll={false}>
+      <NextLink href={`/${locale}/works/${id}`} scroll={false}>
         <LinkBox cursor="pointer">
           <Image
             src={thumbnail}

@@ -86,7 +86,7 @@ const Home = () => {
             {t("I am a software developer")}.
           </Paragraph>
           <Box textAlign="center" my={4}>
-            <NextLink href="/works" passHref scroll={false}>
+            <NextLink href="/works">
               <Button rightIcon={<BiChevronRight />} colorScheme="teal">
                 {t("My portfolio")}
               </Button>
@@ -119,10 +119,11 @@ const Home = () => {
           <BioSection>
             <BioYear>{t("Jun")}, 2024</BioYear>
             <Link
-              href="https://www.hackerrank.com/certificates/61c0fb6eda00"
+              href="https://www.hackerrank.com/certificates/5bfee59163af"
               target="_blank"
             >
-              Hacker Rank Node, CSS, JavaScript, Problem Solving (Basic)
+              Hacker Rank ReactJS, CSS, JavaScript, NodeJS, Problem Solving
+              (Basic)
             </Link>
           </BioSection>
         </Section>

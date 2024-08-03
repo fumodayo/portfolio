@@ -16,19 +16,19 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "./logo";
+import { useLocale, useTranslations } from "next-intl";
 import { IoLogoGithub } from "react-icons/io5";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
 import LanguageSwitch from "./language-switch";
-import { useLocale, useTranslations } from "next-intl";
+import Logo from "./logo";
 
 const LinkItem = ({ href, path, target, children, ...props }: any) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
 
   return (
-    <NextLink href={href} passHref scroll={false}>
+    <NextLink href={href} scroll={false}>
       <Link
         p={2}
         bg={active ? "grassTeal" : undefined}
@@ -84,7 +84,7 @@ const Navbar = ({ props }: { props?: any }) => {
           </LinkItem>
           <LinkItem
             target="_blank"
-            href="https://github.com/thairyo/thairyo.github.io"
+            href="https://github.com/fumodayo/portfolio"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -100,32 +100,31 @@ const Navbar = ({ props }: { props?: any }) => {
           <Flex gap={2}>
             <ThemeToggleButton />
             <LanguageSwitch />
+            <Box display={{ base: "inline-block", md: "none" }}>
+              <Menu isLazy id="navbar-menu">
+                <MenuButton
+                  as={IconButton}
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                  aria-label="Options"
+                />
+                <MenuList>
+                  <NextLink href="/">
+                    <MenuItem as={Link}>{t("about")}</MenuItem>
+                  </NextLink>
+                  <NextLink href={`/${locale}/works`}>
+                    <MenuItem as={Link}>{t("works")}</MenuItem>
+                  </NextLink>
+                  <MenuItem
+                    as={Link}
+                    href="https://github.com/fumodayo/portfolio"
+                  >
+                    {t("source")}
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
           </Flex>
-
-          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>{t("about")}</MenuItem>
-                </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>{t("works")}</MenuItem>
-                </NextLink>
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/thairyo/thairyo.github.io"
-                >
-                  {t("source")}
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </Box>
         </Box>
       </Container>
     </Box>
