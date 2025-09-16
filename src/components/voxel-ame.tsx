@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { loadGLTFModel } from "@/lib/model";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { AmeContainer, AmeSpinner } from "./voxel-ame-loader";
 
 function easeOutCirc(x: number) {
@@ -13,6 +13,7 @@ function easeOutCirc(x: number) {
 const VoxelAme = () => {
   const refContainer = useRef<HTMLDivElement>(null);
   const refRenderer = useRef<THREE.WebGLRenderer | null>(null);
+  const refMixer = useRef<THREE.AnimationMixer | null>(null);
   const [loading, setLoading] = useState(true);
 
   const handleWindowResize = useCallback(() => {
@@ -21,14 +22,26 @@ const VoxelAme = () => {
 
     if (container && renderer) {
       const scW = container.clientWidth;
-      const csH = container.clientHeight;
+      const scH = container.clientHeight;
 
-      renderer.setSize(scW, csH);
+      renderer.setSize(scW, scH);
+
+      const camera = (renderer as any).camera as THREE.OrthographicCamera;
+      if (camera) {
+        const scale = scH * 0.0005 + 3;
+        camera.left = -scale;
+        camera.right = scale;
+        camera.top = scale;
+        camera.bottom = -scale;
+        camera.updateProjectionMatrix();
+      }
     }
   }, []);
 
   useEffect(() => {
     const { current: container } = refContainer;
+    let req: number | null = null;
+
     if (container) {
       const scW = container.clientWidth;
       const scH = container.clientHeight;
@@ -39,7 +52,6 @@ const VoxelAme = () => {
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
-      // (renderer as any).outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
@@ -62,6 +74,7 @@ const VoxelAme = () => {
       );
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
+      (renderer as any).camera = camera;
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
       scene.add(ambientLight);
@@ -69,19 +82,44 @@ const VoxelAme = () => {
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
       controls.target = target;
+      
+      const clock = new THREE.Clock();
+      
+      const loader = new GLTFLoader();
+      loader.load(
+        "/ame.glb",
+        (gltf) => {
+          const model = gltf.scene;
+          scene.add(model);
+          
+          if (gltf.animations && gltf.animations.length) {
+            const mixer = new THREE.AnimationMixer(model);
 
-      loadGLTFModel(scene, "/ame.glb", {
-        receiveShadow: false,
-        castShadow: false,
-      }).then(() => {
-        animate();
-        setLoading(false);
-      });
+            // Giá trị < 1.0 sẽ làm chậm, > 1.0 sẽ làm nhanh.
+            mixer.timeScale = 0.5;
 
-      let req: any = null;
+            const action = mixer.clipAction(gltf.animations[0]);
+            action.play();
+            refMixer.current = mixer;
+          }
+
+          animate();
+          setLoading(false);
+        },
+        undefined, 
+        (error) => {
+          console.error("An error happened while loading the model:", error);
+        }
+      );
+
       let frame = 0;
       const animate = () => {
         req = requestAnimationFrame(animate);
+        const delta = clock.getDelta();
+        
+        if (refMixer.current) {
+          refMixer.current.update(delta);
+        }
 
         frame = frame <= 100 ? frame + 1 : frame;
 
@@ -103,7 +141,9 @@ const VoxelAme = () => {
       };
 
       return () => {
-        cancelAnimationFrame(req);
+        if (req !== null) {
+          cancelAnimationFrame(req);
+        }
         renderer.domElement.remove();
         renderer.dispose();
       };
